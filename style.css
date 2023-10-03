@@ -1,0 +1,199 @@
+@font-face {
+    font-family: MyFont;
+    src: url(Fonts/Kingthings\ Clarity1.1.ttf);
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "MyFont";
+}
+
+body {
+    background: #fefefe;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background: rgb(47,106,135);
+    background: linear-gradient(270deg, rgba(47,106,135,1) 0%, rgba(23,47,91,1) 51%, rgba(23,21,71,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li.menu a {
+    display: block;
+    color: #fefefe;;
+    font-size: 15px;
+    padding: 2px 15px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 10px 10px;
+}
+
+.navbar ul li.menu a:hover {
+    color: black;
+    background: #fefefe;
+    transition: 0.2s;
+}
+
+.navbar ul li.menu a.active {
+    color: black;
+    background: #fefefe;
+}
+
+.lang-menu {
+    background: rgb(240, 240, 240);
+    margin-top: 10px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: inset 1px 1px 5px 2px #969696;
+}
+
+.lang-dropdown {
+    margin-top: 10px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.selected-lang {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    width: 85px;
+}
+
+.selected-lang {
+    font-size: 15px;
+    color: #181818;;
+    transition: 0.2s;
+}
+
+.selected-lang:before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 16px;
+    background-image: url(Image/EnglishFlag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+
+}
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 30px;
+    }
+} 
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+    }
+} 
+
+@media only screen and (max-width: 900px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+    .navbar {
+        height: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: rgb(78,72,179);
+        background: linear-gradient(0deg, rgba(78,72,179,1) 0%, rgba(128,157,212,1) 58%, rgba(120,199,235,1) 100%);
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .navbar.active{
+        height: 250px;
+    }
+
+    .navbar ul {
+        display: block;
+        width: fit-content;
+        margin: 35px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .navbar.active ul {
+        opacity: 1;
+    }
+
+    .navbar ul li.menu a {
+        margin-bottom: 12px;
+    }
+} 
+
+.lang-menu ul {
+    padding: 0;
+    margin: 0;
+    background-color: #fefefe;
+    transition: 0.2s;
+    visibility: hidden;
+}
+
+.lang-menu ul li {
+    list-style: none;
+}
+
+.lang-menu ul li a {
+    width: 130px;
+    display: block;
+    padding: 5px 10px;
+}
+
+.lang-menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 18px;
+    background-image: url(Image/EnglishFlag.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.th:before {
+    background-image: url(Image/ThailandFlag.png);
+}
+
+.en:before {
+    background-image: url(Image/EnglishFlag.png);
+}
+
+.lang-menu:hover ul{
+    visibility: visible;
+}
